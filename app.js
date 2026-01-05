@@ -39,8 +39,9 @@ app.get("/imdb/{*path}",async (req,res)=> {
     const response = await axios.get(`https://api.themoviedb.org/3/${subPath}`,{
         params:{
             ...queryParams,
+            region:"IN",
             api_key:API_KEY,
-            region:"IN"
+            
         }
     })
     res.json(response.data);
